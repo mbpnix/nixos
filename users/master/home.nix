@@ -60,6 +60,8 @@
     vlc
     iosevka
     emacs
+    google-cloud-sdk
+    mkpasswd
   ];
 
   # This value determines the Home Manager release that your

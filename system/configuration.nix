@@ -74,8 +74,8 @@
       enable = true;
       extraConfig = let
         black = import (builtins.fetchTarball {
-          url = "https://github.com/edwtjo/nixos-black-theme/archive/v1.1.1.tar.gz";
-          sha256 = "16qmz1c22arn614zfrfn9a6y7k091227ghvnm97xn8nvgd11hlhz";
+          url = "https://github.com/mbpnix/nixos-black-theme/releases/download/v1.1.1/nixos-black-theme-1.1.1.tar.gz";
+          sha256 = "1l8kyr83q3lwpp6hpia49zj9cyjbkplrsk8qyxwkpi8491ay87v6";
         });
       in
         black.lightdm-tiny;
@@ -94,9 +94,6 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
-  
-
   # Configure keymap in X11
   services.xserver.layout = "gb";
   services.xserver.xkbOptions = "eurosign:e";
@@ -114,6 +111,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.master = {
     isNormalUser = true;
+    initialPassword = "master";
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ]; # Enable ‘sudo’ for the user.
   };
 
@@ -132,6 +130,7 @@
     git
     git-crypt
     gnupg
+    iosevka
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
